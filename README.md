@@ -1,4 +1,4 @@
-xdg-open ssh://user:pass@host:port on linux
+xdg-open web-links like `ssh://user:pass@host:port` on linux chrome/firefox
 
 
 
