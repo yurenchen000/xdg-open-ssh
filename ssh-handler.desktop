@@ -2,7 +2,7 @@
 [Desktop Entry]
 Type=Application
 Name=SSH Handler
-Exec=/home/chen/bin/ssh-handler.sh %u
+Exec=~/bin/ssh-handler.sh %u
 Icon=utilities-terminal
 StartupNotify=false
 MimeType=x-scheme-handler/ssh
