@@ -1,0 +1,4 @@
+
+[Default Applications]
+x-scheme-handler/ssh=ssh-handler.desktop
+
