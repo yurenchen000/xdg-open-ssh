@@ -1,6 +1,9 @@
 xdg-open web-links like `ssh://user:pass@host:port` on linux chrome/firefox
 
 
+> inspired by this post  
+>   https://soultrace.net/open-ssh-urls-in-chrome-and-firefox/
+   
 
 url scheme:
 
@@ -16,3 +19,6 @@ use `gnome-terminal` or `terminator` open the ssh url,
 install:
 
     install.sh
+
+
+
