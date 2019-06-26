@@ -33,7 +33,9 @@ parseURL(){
 	[ -n "$port" ] && cmd="$cmd -p $port"
 	cmd="ssh $cmd"
 	cmd="$cmd -o StrictHostKeyChecking=no"
-	[ -n "$pass" ] && cmd="sshpass -p '$pass' $cmd"
+	#[ -n "$pass" ] && cmd="sshpass -p '$pass' $cmd"
+	#[ -n "$pass" ] && cmd="sshpass -p '$pass' $cmd; [ \$? == 5 ] && echo login fail && $cmd"
+	[ -n "$pass" ] && cmd="bash -c \"sshpass -p '$pass' $cmd; [ \\\$? == 5 ] && echo 'incorrect password' && $cmd\""
 
 	echo "url: $1"
 	echo "cmd: $cmd"
