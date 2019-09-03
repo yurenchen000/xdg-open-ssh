@@ -20,6 +20,7 @@ parseURL(){
 	[ "$pass" == "$a" ] && pass=''
 	local host=${h%%:*}
 	local port=${h##*:}
+	port=${port%%/}
 	[ "$port" == "$h" ] && port=''
 
 	decodeURIComponent(){
