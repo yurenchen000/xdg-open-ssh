@@ -11,6 +11,14 @@ REM set "secureCRT=N:\d_soft_80\Program Files\SecureCRT\SecureCRT.exe"
 set "putty=N:\d_soft_80\Program\putty\PUTTY.EXE"
 
 
+REM ---------- install self
+if "%1" == "--install" (
+	echo "install reg info.."
+	REM reg add HKCU\Software\Classes\ssh\shell\open\command /ve  /t REG_SZ  /d "\"%~dp0ssh_url_handle.bat\" %%1" -f
+	reg add HKCU\Software\Classes\ssh\shell\open\command /ve  /t REG_SZ  /d "\"%~f0\" %%1" -f
+	exit /b
+)
+
 REM ----------
 set arg=%1
 echo arg: %arg%
