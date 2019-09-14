@@ -25,6 +25,7 @@ if "%1" == "--install" (
 	echo "install reg info.."
 	REM reg add HKCU\Software\Classes\ssh\shell\open\command /ve  /t REG_SZ  /d "\"%~dp0ssh_url_handle.bat\" %%1" -f
 	reg add HKCU\Software\Classes\ssh\shell\open\command /ve  /t REG_SZ  /d "\"%~f0\" %%1" -f
+	reg add HKCU\Software\Classes\ssh /v "URL Protocol"  /t REG_SZ -f
 	exit /b
 )
 
