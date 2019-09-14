@@ -10,6 +10,7 @@ url scheme:
     ssh://[user[:pass]@]host[:port]
 
 
+## linux
 xdg-open-ssh:
 
 use `gnome-terminal` or `terminator` open the ssh url,  
@@ -20,5 +21,19 @@ install:
 
     install.sh
 
+## windows
+`win/ssh_url_handle.bat` for win `ssh://` url handle.
 
+install:
 
+    ssh_url_handle.bat --install
+
+usage:  
+
+edit `ssh_url_handle.bat` to add custom terminal application path.  
+sercureCRT and putty as demo in script.
+
+```bat
+REM set "secureCRT=N:\d_soft_80\Program Files\SecureCRT\SecureCRT.exe"
+set "putty=N:\d_soft_80\Program\putty\PUTTY.EXE"
+```
