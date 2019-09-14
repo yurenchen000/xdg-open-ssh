@@ -10,6 +10,14 @@ REM ---------- setting
 REM set "secureCRT=N:\d_soft_80\Program Files\SecureCRT\SecureCRT.exe"
 set "putty=N:\d_soft_80\Program\putty\PUTTY.EXE"
 
+REM ---------- usage
+if "%1" == "" (
+	echo Usage: 
+	echo     %0 --install
+	echo     %0 ssh://user:pass@host:port
+	echo.
+	exit /b
+)
 
 REM ---------- install self
 if "%1" == "--install" (
