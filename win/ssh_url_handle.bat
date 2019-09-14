@@ -7,8 +7,8 @@ REM ----------------------------------------
 
 REM ---------- setting
 
-REM set "secureCRT=N:\d_soft_80\Program Files\SecureCRT\SecureCRT.exe"
-set "putty=N:\d_soft_80\Program\putty\PUTTY.EXE"
+REM set "secureCRT=C:\Program Files\SecureCRT\SecureCRT.exe"
+set "putty=C:\Program\putty\PUTTY.EXE"
 
 REM ---------- usage
 if "%1" == "" (
