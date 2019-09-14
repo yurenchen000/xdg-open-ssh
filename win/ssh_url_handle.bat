@@ -16,6 +16,7 @@ if "%1" == "" (
 	echo     %0 --install
 	echo     %0 ssh://user:pass@host:port
 	echo.
+	pause
 	exit /b
 )
 
