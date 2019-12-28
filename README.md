@@ -10,6 +10,8 @@ url scheme:
     ssh://[user[:pass]@]host[:port]
 
 
+NOTICE: this simple script tool maybe has **command injection vulnerability**, only open links you trusted.
+
 ## linux
 xdg-open-ssh:
 
