@@ -36,7 +36,7 @@ parseURL(){
 	cmd="$cmd -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null"
 	#[ -n "$pass" ] && cmd="sshpass -p '$pass' $cmd"
 	#[ -n "$pass" ] && cmd="sshpass -p '$pass' $cmd; [ \$? == 5 ] && echo login fail && $cmd"
-	[ -n "$pass" ] && cmd="bash -c \"sshpass -p '$pass' $cmd; [ \\\$? == 5 ] && echo 'incorrect password' && $cmd\""
+	[ -n "$pass" ] && cmd="bash -c \"TERM=xterm-color sshpass -p '$pass' $cmd; [ \\\$? == 5 ] && echo 'incorrect password' && $cmd\""
 
 	echo "url: $1"
 	echo "cmd: $cmd"
