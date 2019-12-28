@@ -10,6 +10,7 @@
 
 # xdg-open ssh://user:pass@host:port
 parseURL(){
+	[ "$1" == "-i" ] && flg_cur=1 && shift 1
 	local s=${1##ssh://}
 	local a=${s%%@*}
 	[ "$a" == "$s" ] && a=''
@@ -41,6 +42,7 @@ parseURL(){
 	echo "url: $1"
 	echo "cmd: $cmd"
 	echo
+	[ -n "$flg_cur" ] && { eval "$cmd"; return; }
 	#$cmd
 
 	#terminator -e "$cmd" &
@@ -56,6 +58,6 @@ parseURL(){
 # parseURL 'ssh://aaa:%25aa%25bb!%40%23%24%25%5E%26*()%3F%20%20%5C%2F@host:port'
 # parseURL 'ssh://chen:abc@10.1.1.30:1234'
 
-parseURL "$1"
+parseURL "$@"
 
 
