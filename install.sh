@@ -1,12 +1,15 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-# .desktop
-sed "s:~:$HOME:" ssh-handler.desktop > ~/.local/share/applications/ssh-handler.desktop
+HANDLER=ssh-handler
+WRAPPER=${HANDLER}.sh
+DESKTOP=${HANDLER}.desktop
+CONFIG_DIR=${HOME}/.local/share/applications/
+BINARY_DIR=${HOME}/bin/
 
-# .sh
-mkdir -p ~/bin/
-cp -p ssh-handler.sh ~/bin/
-
-# mime
-xdg-mime default ssh-handler.desktop x-scheme-handler/ssh
-
+echo "Write: ${CONFIG_DIR}${DESKTOP}" &&
+  sed "s:~:${HOME}:" ${DESKTOP} > ${CONFIG_DIR}${DESKTOP} &&
+  echo " Copy: ${BINARY_DIR}${WRAPPER}" &&
+  mkdir --parents ${BINARY_DIR} &&
+  cp --preserve ${WRAPPER} ${BINARY_DIR} &&
+  echo "  Set: xdg-mime default ${DESKTOP}" &&
+  xdg-mime default ${DESKTOP} x-scheme-handler/ssh
