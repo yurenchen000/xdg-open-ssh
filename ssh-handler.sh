@@ -25,7 +25,7 @@ parseURL(){
 	[ "$port" == "$h" ] && port=''
 
 	decodeURIComponent(){
-	  echo "$1" | sed -e 's/%\([0-9A-F][0-9A-F]\)/\\\x\1/g'  | xargs -0 printf "%b";
+	  echo "$1" | sed -e 's/%\([0-9A-Fa-f][0-9A-Fa-f]\)/\\\x\1/g'  | xargs -0 printf "%b";
 	}
 
 	pass=`decodeURIComponent "$pass"`
