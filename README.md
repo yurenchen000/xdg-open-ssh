@@ -39,3 +39,11 @@ sercureCRT and putty as demo in script.
 REM set "secureCRT=N:\d_soft_80\Program Files\SecureCRT\SecureCRT.exe"
 set "putty=N:\d_soft_80\Program\putty\PUTTY.EXE"
 ```
+
+<br>
+
+## Other Bash Script
+
+[![other bash repos](https://res.ez2.fun/svg/repos-bash_script.svg)](https://github.com/yurenchen000/yurenchen000/blob/main/repos.md#bash-scripts)
+
+
