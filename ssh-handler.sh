@@ -4,7 +4,8 @@
 #   https://soultrace.net/open-ssh-urls-in-chrome-and-firefox/
 
 #d=${1#ssh://}
-#gnome-terminal -e "ssh $d" &
+#gnome-terminal -e "ssh $d" &  ## -e is deprecated
+#gnome-terminal -- ssh "$d" &
 #terminator -e "ssh $d" &
 
 
@@ -25,7 +26,7 @@ parseURL(){
 	[ "$port" == "$h" ] && port=''
 
 	decodeURIComponent(){
-	  echo "$1" | sed -e 's/%\([0-9A-Fa-f][0-9A-Fa-f]\)/\\\x\1/g'  | xargs -0 printf "%b";
+		echo "$1" | sed -e 's/%\([0-9A-Fa-f][0-9A-Fa-f]\)/\\\x\1/g'  | xargs -0 printf "%b";
 	}
 
 	pass=`decodeURIComponent "$pass"`
@@ -46,7 +47,8 @@ parseURL(){
 	#$cmd
 
 	#terminator -e "$cmd" &
-	gnome-terminal -e "$cmd"
+	#gnome-terminal -e "$cmd"
+	gnome-terminal -- $cmd
 	#echo "ret: $?"
 }
 
